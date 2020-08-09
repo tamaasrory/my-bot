@@ -9,9 +9,6 @@ const bot = new TelegramBot(token, {polling: true});
 // Matches "/start[whatever]"
 bot.onText(/\/start?(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
-    // 'match' is the result of executing the regexp above on the text content
-    // of the message
-    // send back the matched "whatever" to the chat
     bot.sendMessage(msg.chat.id, 'Ok, I\'m Ready...');
 });
 
