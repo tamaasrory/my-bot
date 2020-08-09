@@ -6,24 +6,49 @@ const token = '1203010633:AAEHRM6vkLvK_uA9ZqWICdtXWryl5rqqX7c';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-// Matches "/echo [whatever]"
-bot.onText(/\/echo (.+)/, (msg, match) => {
+// Matches "/start[whatever]"
+bot.onText(/\/start?(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
     // 'match' is the result of executing the regexp above on the text content
     // of the message
-
-    const chatId = msg.chat.id;
-    const resp = match[1]; // the captured "whatever"
-
     // send back the matched "whatever" to the chat
-    bot.sendMessage(chatId, resp);
+    bot.sendMessage(msg.chat.id, 'Ok, I\'m Ready...');
+});
+
+// Matches "/about"
+bot.onText(/\/about?(.+)/, (msg, match) => {
+    bot.sendMessage(msg.chat.id, 'I\'m Tajriy Robot Asistant');
 });
 
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on('message', (msg) => {
-    const chatId = msg.chat.id;
+    const msgText = msg.text.toString().toLowerCase();
+    let replyMsg = null;
 
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'Received your message');
+
+    // say HI
+    if (msgText.includes('hi')) {
+        replyMsg = `Hello ${msg.from.first_name}...`;
+    }
+
+    // say how are you
+    if (msgText.includes('how are you')) {
+        replyMsg = "I'm fine and you?";
+    }
+
+    // say thanks
+    if (msgText.includes('thank')) {
+        replyMsg = "Your Welcome";
+    }
+
+    // say good
+    if (msgText.includes('fine')) {
+        replyMsg = "Good...!";
+    }
+
+    if (replyMsg) {
+        bot.sendMessage(msg.chat.id, replyMsg);
+    }
 });
