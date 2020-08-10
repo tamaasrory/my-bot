@@ -17,8 +17,7 @@ bot.onText(/\/about?(.+)/, (msg, match) => {
     bot.sendMessage(msg.chat.id, 'I\'m Tajriy Robot Asistant');
 });
 
-// Listen for any kind of message. There are different kinds of
-// messages.
+// Listen for any kind of message. There are different kinds of messages
 bot.on('message', (msg) => {
     const msgText = msg.text.toString().toLowerCase();
     let replyMsg = null;
