@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, {polling: true});
 // Matches "/start[whatever]"
 bot.onText(/\/start?(.+)/, (msg, match) => {
     // 'msg' is the received Message from Telegram
-    bot.sendMessage(msg.chat.id, 'Ok, I\'m Ready...');
+    bot.sendMessage(msg.chat.id, 'Hello, I\'m Ready...');
 });
 
 // Matches "/about"
