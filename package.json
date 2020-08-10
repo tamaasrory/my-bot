@@ -1,0 +1,32 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "Bot Created with telegram-bot + node-telegram-bot-api",
+  "main": "index.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.50.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamaasrory/my-bot.git"
+  },
+  "keywords": [
+    "Bot",
+    "Created",
+    "with",
+    "telegram-bot",
+    "+",
+    "node-telegram-bot-api"
+  ],
+  "author": "Tama Asrory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamaasrory/my-bot/issues"
+  },
+  "homepage": "https://github.com/tamaasrory/my-bot#readme"
+}
